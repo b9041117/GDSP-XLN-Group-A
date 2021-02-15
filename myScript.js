@@ -1,4 +1,3 @@
-
 function showHide(shown, hidden){
     document.getElementById(hidden).style.display='block';
     document.getElementById(shown).style.display='none';
@@ -10,21 +9,28 @@ function show(hidden){
     return false;
 }
 
-window.onscroll = function() {myFunction()};
+function imgPreview(){
 
-// Get the navbar
-var stickybar = document.getElementById("stickybar");
+const inpFile = document.getElementById("inpFile");
+const previewContainer = document.getElementById("imagePreview");
+const previewImage = previewContainer.querySelector(".image-preview__image");
+const previewDefaultText = previewContainer.querySelector(".image-preview__default-text");
 
+inpFile.addEventListener("change", function(){
+    const file = this.files[0];
+    if(file){
+        const reader = new FileReader();
+        previewDefaultText.style.display="none";
+        previewImage.style.display="block";
+        reader.addEventListener("load", function(){
+            previewImage.setAttribute("src", this.result);
+        })
+        reader.readAsDataURL(file);
+    } else {
+        previewDefaultText.style.display= null;
+        previewImage.style.display= null;
+        previewImage.setAttribute("src", "");
+    }
+});
 
-// Get the offset position of the navbar
-var sticky = stickybar.offsetTop;
-
-
-// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    stickybar.classList.add("sticky")
-  } else {
-    stickybar.classList.remove("sticky");
-  }
 }
