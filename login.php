@@ -5,7 +5,6 @@ session_start();
 	include("connection.php");
 	include("functions.php");
 
-
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		//something was posted
@@ -17,7 +16,7 @@ session_start();
 			//read from database
 			$query = "select * from users where Customer_Key = '$Customer_Key' limit 1";
 			$result = mysqli_query($con, $query);
-
+			
 			if($result)
 			{
 				if($result && mysqli_num_rows($result) > 0)
@@ -30,16 +29,25 @@ session_start();
 
 						echo "Login Successful";
 
+						$Customer_Key_Export = $Customer_Key;
+					
+						$var_str = var_export($Customer_Key_Export, true);
+						$var = "<?php\n\n\$Customer_Key = $var_str;\n\n?>";
+						file_put_contents('CustomerKey.php', $var);
+
 						header("Location: IssueSelection.html");
 						die;
 					}
 				}
 			}
 			
-			echo "wrong username or password!";
+			$message = "Incorrect Customer Key";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+			
+			
 		}else
 		{
-			echo "empty";
+			
 		}
 	}
 
@@ -58,7 +66,7 @@ session_start();
 <body>
 <div id="stickybar">
         <script src="myScript.js"></script>
-        <a class="logo" href="www.xln.co.uk"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/XLN-Logo.jpg" alt="image not loaded" height="100" width=aut0></a>
+        <a class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/XLN-Logo.jpg" alt="image not loaded" height="100" width=aut0></a>
         <p class = "sales"> Sales: <br> 0808 302 9676 </p>
         <p class = "customer"> Customer Service: <br> 0344 880 7777</p>
     </div>

@@ -1,18 +1,17 @@
- body{
-        
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #ececec;
-    }
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ececec;
+}
    
-   #stickybar{
+   .navbar{
 
         display: flex;
         justify-content: space-around;
         align-items: flex-start;
         font-size: 25px;
-        background-color: #ececec;
         color: #29b4be;
-      
+        
+    
     }
 
     h1{
@@ -28,7 +27,6 @@
     text-align: center;
     vertical-align: middle;
     margin-top: 10%;
-    
     }
     
     #one{
@@ -44,7 +42,7 @@
         font-size: 20px;
     }
 
-    .topnav {
+    ul {
         list-style: none;
         margin: 0;
         padding: 0;
@@ -53,12 +51,12 @@
         text-align: center;
       }
       
-      .topnav li {
+      li {
         display: inline;
        
       }
       
-      .topnav li a {
+      li a {
         display:inline-block;
         color: white;
         text-align: center;
@@ -79,22 +77,21 @@
         width: 30%;
       }
 
-    div.form {
-
+      div.form {
         display:block;
         text-align: center;
     }
-
     form {
         display: inline-block;
         margin: auto;
         text-align: left;
     }
-
+    input[type=custNo], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        border: 1px solid lightgray;
+    }
     button{
-        
-      
-        vertical-align: middle;
         width: 150px;
         text-align: center;
         background-color: #2596be;
@@ -103,143 +100,53 @@
         padding: 10px 15px;
     }
     button:hover{
-
         background-color: #36454f;
         transition-duration: 0.8s;
-    }
-
-    #Broadband{
-
-
-      vertical-align: middle;
-      width: 250px;
-      height: 250px;
-      text-align: center;
-      background-color: #2596be;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      word-wrap: break-word;
-
-    }
-
-    #Broadband:hover{
-
-      background-color: #36454f;
-      transition-duration: 0.8s;
-  }
-
-    #Landline{
-
-      vertical-align: middle;
-      width: 250px;
-      height: 250px;
-      text-align: center;
-      background-color: #2596be;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-
-    }
-
-    #Landline:hover{
-
-
-        background-color: #36454f;
-        transition-duration: 0.8s;
-    }
     }
     a[type=forgot] {
-
         color: #2596be;
         border-right: 1px solid black;
         padding-right: 5px;
     }
     a[type=forgot]:hover{
-
         text-decoration: underline;
     }
     a[type=unregistered]{
-
         color: #2596be;
     }
     a[type=unregistered]:hover{
-
         text-decoration: underline;
     }
     label[for=email], label[for=psw], label[for=chckbx]{
-
         font-weight: lighter;
         font-size: small;
         text-align: center;
     }
-    
-    #footer{
 
-      display:flex;
-      color: white;
-      align-items: center;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      justify-content:center;
-      align-items:center;
 
-    }
-    .footer {
 
-      background-color: #333;
-      height: 50px;
-      margin-top:40%;
-    }
-    
-    #stickybar a {
+    .image-preview{
+        width: 300px;
+        min-height: 100px;
+        border: 2px solid #dddddd;
+        margin-top: 15px;
 
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        color: #cccccc;
     }
-    
-    #stickybar a:hover {
-      background-color: #ddd;
-      color: black;
-    }
-    
-    #stickybar.active {
-      background-color: #4CAF50;
-      color: white;
-    }
-    
-    .content {
-      padding: 16px;
-    }
-    
-    .sticky {
-      position: fixed;
-      top: 0;
-      width: 100%;
-    }
-    
-    .sticky + .content {
-      padding-top: 60px;
+    .image-preview__image{
+        display: none;
+        width: 100%;
     }
 
-    .box{
+    @media only screen and (max-width: 768px) {
+          div.stickybar{
+              display:block;
+              font-size: 15px;
+              text-align: center;
+          }
 
-      vertical-align: middle;
-      text-align: center;
-      background-color: #2596be;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-
-    }
-
-    .button{
-
-     
     }
