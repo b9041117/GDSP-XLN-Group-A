@@ -12,7 +12,7 @@ $Customer_Key = intval($Customer_Key);
 echo $Customer_Key;
 
 
-if(isset($_POST['LL_Description']))
+if(isset($_POST['BB_Description']))
     {
         $data=$_POST['BB_Description'];
         $fp = fopen('BB_Description.txt', 'a');
@@ -56,10 +56,10 @@ if(isset($_POST['LL_Description']))
         <div id="part1" style="display: block;">
             
             <div class="form">
-                <form>
+                <form method="post">
                     <p id="one">Step 1: Is your telephone line working? <br> <br> </p>
                
-                    <input type="text" placeholder="Description of problem" name="BB_Description"required>
+                    <input type="text" placeholder="Description of problem" name="BB_Description" required>
                     <br>
                     <br>
                     <button type="submit">Save Description</button>

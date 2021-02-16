@@ -1,12 +1,12 @@
 function showHide(shown, hidden){
-    document.getElementById(hidden).style.display='block';
-    document.getElementById(shown).style.display='none';
-    return false;
+  document.getElementById(hidden).style.display='block';
+  document.getElementById(shown).style.display='none';
+  return false;
 }
 
 function show(hidden){
-    document.getElementById(hidden).style.display='block';
-    return false;
+  document.getElementById(hidden).style.display='block';
+  return false;
 }
 
 function imgPreview(){
@@ -17,20 +17,20 @@ const previewImage = previewContainer.querySelector(".image-preview__image");
 const previewDefaultText = previewContainer.querySelector(".image-preview__default-text");
 
 inpFile.addEventListener("change", function(){
-    const file = this.files[0];
-    if(file){
-        const reader = new FileReader();
-        previewDefaultText.style.display="none";
-        previewImage.style.display="block";
-        reader.addEventListener("load", function(){
-            previewImage.setAttribute("src", this.result);
-        })
-        reader.readAsDataURL(file);
-    } else {
-        previewDefaultText.style.display= null;
-        previewImage.style.display= null;
-        previewImage.setAttribute("src", "");
-    }
+  const file = this.files[0];
+  if(file){
+      const reader = new FileReader();
+      previewDefaultText.style.display="none";
+      previewImage.style.display="block";
+      reader.addEventListener("load", function(){
+          previewImage.setAttribute("src", this.result);
+      })
+      reader.readAsDataURL(file);
+  } else {
+      previewDefaultText.style.display= null;
+      previewImage.style.display= null;
+      previewImage.setAttribute("src", "");
+  }
 });
 
 }
