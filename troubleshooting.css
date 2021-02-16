@@ -3,7 +3,7 @@ body{
     background-color: #ececec;
 }
      
-     div.stickybar{
+     .navbar{
   
           display: flex;
           justify-content: space-around;
