@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<html lang = "en">
+<html lang="en">
     <head>
         <link rel="stylesheet" href="troubleshooting.css">
         <script src="myScript.js"></script>
@@ -53,6 +53,7 @@
                 <form>
                     <p id="two"> Check your BT openreach Master Socket for damage/loose cables. Is the problem fixed? </p></h4>
                     <a class ="socket"><img src="https://www.electricalworld.com/Images/Models/Full/2181.Png" alt="socket" height=300 width =300></a>
+                    
                     
                     <br><br>
                     <button onclick="return showHide('part2', 'part4')">Yes</button>
@@ -118,7 +119,7 @@
                     <p id ="one">Change your DSL cable<br> <br> Is it functional now?</p>
                     <br><br>
                     <button onclick="return showHide('part7', 'part4')">Yes</button>
-                    <button onclick="return showHide('part7', 'part12')">No</button>
+                    <button onclick="return showHide('part7', 'part10')">No</button>
                     <button onclick="return showHide('part7', 'part9')">Can't replace DSL cable?</button>
                     <br>
                 </form>
@@ -128,7 +129,7 @@
         <div id="part8" style="display: none;">
             <div class="form">
                 <form>
-                    <p id ="one">Micro Filter Changed<br> <br> Is the problem fixed?</p>
+                    <p id ="one">Change Micro Filter<br> <br> Is the problem fixed?</p>
                     <br><br>
                     <button onclick="return showHide('part8', 'part4')">Yes</button>
                     <button onclick="return showHide('part8', 'part7')">No</button>
@@ -156,7 +157,7 @@
                     <p id ="one">use phone wire direct to router without micro filter.<br> <br> Is the problem fixed?</p>
                     <br><br>
                     <button onclick="return showHide('part9', 'part4')">Yes</button>
-                    <button onclick="return showHide('part9', 'part10')">No</button>
+                    <button onclick="return showHide('part9', 'part7')">No</button>
                     <br>
                 </form>
             </div>    
@@ -167,9 +168,9 @@
                 <form>
                     <p id ="one">if sync speed has improved, would you like us to divert your calls until you can obtain a new DSL/MF<br> <br></p>
                     <br><br>
-                    <button onclick="return showHide('part10', 'part18')">Yes</button>
-                    <button onclick="return showHide('part10', 'part8')">Next</button>
-                    <button onclick="return showHide('part10', 'part8')">No</button>
+                    <button onclick="return showHide('part10', 'part18')">Yes divert calls</button>
+                    <button onclick="return showHide('part10', 'part12')">Yes speed has improved</button>
+                    <button onclick="return showHide('part10', 'part12')">Next</button>
                     <br>
                 </form>
             </div>    
@@ -190,10 +191,9 @@
             <div class="form">
                 <form>
                     <p id ="one">Attach supporting photos<br> <br></p>
-                    <br><br>
                     <button><a href="Callout.html" target="_blank">attach a photo</a></button>
-                    <button onclick="return showHide('part12', 'part14')">Next</button>
-                    <button onclick="return showHide('part12', 'part14')">No</button>
+                    <br><br>
+                    <button onclick="return showHide('part12', 'part13')">Next</button>
                     <br>
                 </form>
             </div>    
@@ -202,7 +202,7 @@
         <div id="part13" style="display: none;">
             <div class="form">
                 <form>
-                    <p id ="one">Please tell us your current internet speed (mbs)<br> <br></p>
+                    <p id ="one">Alternative Rourter tested?<br> <br></p>
                     <br><br>
                     <button onclick="return showHide('part13', 'part14')">Next</button>
                     <br>
@@ -226,6 +226,7 @@
         <div id="part15" style="display: none;">
             <div class="form">
                 <form>
+                    <p id ="one">Access Times<br> <br></p>
                     <br><br>
                     <p>Please enter your desired date (format DD/MM/YYYY) for an engineer along with AM/PM slot choice</p>
                     <br><br>
@@ -263,8 +264,20 @@
             </div>    
         </div>
 
-        
-
+        <div id="part18" style="display: none;">
+            <div class="form">
+                <form>
+                    <p id ="one">Please enter number to divert calls<br><br></p>
+                    <input type="text" placeholder="Enter alternative number here" id="Number" required>
+                    <br><br>
+                    
+                    <button onclick="return showHide('part18', 'part10')">Speed not improved</button>
+                    <button onclick="return showHide('part18', 'part12')">Speed has improved</button>
+                   
+                    <br>
+                </form>
+            </div>    
+        </div>
 
         <footer class="footer">
             <p id ="footer"> Footer </p>
